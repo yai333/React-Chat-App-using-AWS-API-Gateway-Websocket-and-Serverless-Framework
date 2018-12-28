@@ -1,4 +1,5 @@
 Realtime chat web app using React, AWS API Gateway Websockets, Dynamodb and custom Cognito authorizer.
+https://medium.com/neami-apps/how-to-build-a-react-chat-app-with-aws-api-gateway-websockets-and-cognito-custom-authorizer-6f84f2da47ec
 
 ## Project Structure
 
