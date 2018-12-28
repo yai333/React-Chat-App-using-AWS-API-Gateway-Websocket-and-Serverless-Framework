@@ -19,7 +19,7 @@ https://medium.com/neami-apps/how-to-build-a-react-chat-app-with-aws-api-gateway
 
 https://docs.aws.amazon.com/cognito/latest/developerguide/tutorial-create-user-pool.html
 
-Once User Pool created, Replace all APP_CLIENT_ID and USER_POOL_ID to your created IDs
+Once User Pool created, Replace all <strong>APP_CLIENT_ID</strong> and <strong>USER_POOL_ID</strong> to your created IDs
 
 ## Deploy Backend
 
