@@ -54,7 +54,7 @@ module.exports.authorizerFunc = async (event, context, callback) => {
           }
           // and the Audience (use claims.client_id if verifying an access token)
           if (claims.aud != app_client_id) {
-            callback("Token was not issued for this audience");
+            context.fail("Token was not issued for this audience");
           }
           context.succeed(generateAllow("me", methodArn));
         })
