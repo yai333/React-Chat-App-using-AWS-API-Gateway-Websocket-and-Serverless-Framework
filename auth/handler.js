@@ -79,12 +79,6 @@ const generatePolicy = function(principalId, effect, resource) {
     policyDocument.Statement[0] = statementOne;
     authResponse.policyDocument = policyDocument;
   }
-  // Optional output with custom properties of the String, Number or Boolean type.
-  authResponse.context = {
-    stringKey: "stringval",
-    numberKey: 123,
-    booleanKey: true
-  };
   return authResponse;
 };
 
