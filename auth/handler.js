@@ -36,7 +36,6 @@ module.exports.authorizerFunc = async (event, context, callback) => {
     });
 
     if (!foundKey) {
-      console.log("Public key not found in jwks.json");
       context.fail("Public key not found in jwks.json");
     }
 
