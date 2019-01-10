@@ -13,7 +13,7 @@ module.exports.authorizerFunc = async (event, context, callback) => {
     queryStringParameters: { token },
     methodArn
   } = event;
-  context.succeed(generateAllow("me", methodArn));
+
   const app_client_id = APP_CLIENT_ID;
   if (!token) return callback("Unauthorized");
   const sections = token.split(".");
@@ -56,13 +56,10 @@ module.exports.authorizerFunc = async (event, context, callback) => {
           if (claims.aud != app_client_id) {
             callback("Token was not issued for this audience");
           }
-          console.log(11);
           context.succeed(generateAllow("me", methodArn));
-          console.log(22);
         })
         .catch(err => {
-          console.log(err);
-          callback("Signature verification failed");
+          context.fail("Signature verification failed");
         });
     });
   }
