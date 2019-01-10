@@ -15,7 +15,7 @@ module.exports.authorizerFunc = async (event, context, callback) => {
   } = event;
 
   const app_client_id = APP_CLIENT_ID;
-  if (!token) return callback("Unauthorized");
+  if (!token) return context.fail("Unauthorized");
   const sections = token.split(".");
   let authHeader = jose.util.base64url.decode(sections[0]);
   authHeader = JSON.parse(authHeader);
@@ -37,7 +37,7 @@ module.exports.authorizerFunc = async (event, context, callback) => {
 
     if (!foundKey) {
       console.log("Public key not found in jwks.json");
-      callback("Public key not found in jwks.json");
+      context.fail("Public key not found in jwks.json");
     }
 
     jose.JWK.asKey(foundKey).then(function(result) {
@@ -50,7 +50,7 @@ module.exports.authorizerFunc = async (event, context, callback) => {
           // additionally we can verify the token expiration
           const current_ts = Math.floor(new Date() / 1000);
           if (current_ts > claims.exp) {
-            callback("Token is expired");
+            context.fail("Token is expired");
           }
           // and the Audience (use claims.client_id if verifying an access token)
           if (claims.aud != app_client_id) {
