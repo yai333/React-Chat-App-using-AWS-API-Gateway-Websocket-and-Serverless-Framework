@@ -5,9 +5,9 @@
   "dependencies": {
     "aws-amplify": "^1.1.17",
     "aws-amplify-react": "^2.2.4",
-    "react": "^16.7.0-alpha.2",
+    "react": "^16.8.4",
     "react-chat-window": "^1.0.8",
-    "react-dom": "^16.7.0-alpha.2",
+    "react-dom": "^16.8.4",
     "react-scripts": "2.1.1",
     "sockette": "^2.0.5"
   },
