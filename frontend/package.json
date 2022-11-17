@@ -8,7 +8,7 @@
     "react": "^16.8.4",
     "react-chat-window": "^1.0.8",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.1",
+    "react-scripts": "5.0.1",
     "sockette": "^2.0.5"
   },
   "scripts": {
